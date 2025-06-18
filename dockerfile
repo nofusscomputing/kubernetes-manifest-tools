@@ -3,7 +3,7 @@ ARG ALPINE_VERSION=3.22
 ARG PYTHON_VERSON=3.13.5
 
 
-FROM harbor.earth.nww/docker/alpine:${ALPINE_VERSION} AS build
+FROM alpine:${ALPINE_VERSION} AS build
 
 
 ARG KUBECTL_SLICE_VER
@@ -15,7 +15,7 @@ RUN wget --tries=5 https://github.com/patrickdappollonio/kubectl-slice/releases/
 
 
 
-FROM harbor.earth.nww/docker/python:${PYTHON_VERSON}-alpine${ALPINE_VERSION}
+FROM python:${PYTHON_VERSON}-alpine${ALPINE_VERSION}
 
 
 LABEL \
