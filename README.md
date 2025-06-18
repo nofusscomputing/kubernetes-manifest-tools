@@ -33,7 +33,7 @@ docker run -ti \
   -e "KUBECTL_SLICE_OUTPUT_DIR=/split" \
   -v ${PWD}:/workdir \
   --rm \
-  harbor.earth.nww/testing/kubectl-slice:test
+  nofusscomputing/kubernetes-manifest-tools:latest
 
 ```
 
