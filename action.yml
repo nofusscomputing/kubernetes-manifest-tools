@@ -1,0 +1,39 @@
+---
+
+name: Kubernetes Manifest Tools
+description: Tools for working with and manipulating kubernetes manifests
+author: "No Fuss Computing"
+branding:
+  icon: "activity"
+  color: "blue"
+
+
+inputs:
+
+  format-yaml:
+    required: false
+    default: 'true'
+    description: 'The message to print'
+
+  input-file:
+    required: false
+    description: 'The message to print'
+
+  output-dir:
+    required: false
+    default: '.'
+    description: 'The message to print'
+
+  filename-format:
+    required: false
+    description: 'The message to print'
+
+
+runs:
+  using: 'docker'
+  image: 'python:3.11-slim'
+  env:
+    KUBECTL_SLICE_INPUT_FILE: ${{ inputs.input-file }}
+    KUBECTL_SLICE_OUTPUT_DIR: ${{ inputs.output-dir }}
+    KUBECTL_SLICE_TEMPLATE: ${{ inputs.filename-format }}
+    NFC_FORMAT_YAML: ${{ inputs.format-yaml }}
