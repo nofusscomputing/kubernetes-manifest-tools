@@ -31,7 +31,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'python:3.11-slim'
+  image: 'ghcr.io/nofusscomputing/kubernetes-manifest-tools'
   env:
     KUBECTL_SLICE_INPUT_FILE: ${{ inputs.input-file }}
     KUBECTL_SLICE_OUTPUT_DIR: ${{ inputs.output-dir }}
